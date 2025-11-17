@@ -1,0 +1,95 @@
+<!-- ...existing code... -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IconControls-For-WinForms</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="py-5 text-center bg-primary text-white">
+      <h1 class="fw-bold">IconControls-For-WinForms</h1>
+      <p class="lead mb-0">
+        Biblioteca de iconos y controles para Windows Forms
+      </p>
+
+      <!-- Fila superior -->
+      <a href="#" class="btn btn-outline-light mt-3">Ir a NuGet</a>
+    </header>
+
+    <div class="container py-5 col-md-7">
+      <!-- GIF de demostración -->
+      <div class="mb-5 text-center">
+        <h4 class="mb-3">Cómo funciona</h4>
+        <div class="border rounded p-3 d-inline-block bg-white shadow-sm">
+          <img
+            src="images/intro.gif"
+            alt="Demo GIF"
+            style="max-width: 1000px"
+          />
+        </div>
+      </div>
+
+      <!-- Fila superior -->
+      <div class="mb-4">
+        <input
+          id="filterInput"
+          type="text"
+          class="form-control"
+          placeholder="Filtrar por nombre..."
+        />
+      </div>
+
+      <h3 class="mb-4">Lista de Iconos</h3>
+
+      <!-- Grid de iconos -->
+      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" id="iconContainer">
+        <!-- Los iconos se generarán dinámicamente desde data/icons.csv -->
+      </div>
+
+      <!-- Paginador -->
+      <nav id="paginationNav" class="mt-4" aria-label="Paginación iconos"></nav>
+    </div>
+
+    <!-- Footer Minimalista -->
+    <footer class="text-center text-light py-4 mt-5 bg-primary">
+      <div>
+        © <span id="year"></span> Made by
+        <a
+          href="https://kevinalexdev.vercel.app/"
+          target="_blank"
+          class="text-white"
+          >me</a
+        >
+        — fueled by curiosity and caffeine.
+      </div>
+    </footer>
+
+    <div
+      class="toast-container position-fixed bottom-0 start-50 translate-middle p-3"
+    >
+      <div
+        id="copyToast"
+        class="toast text-bg-success w-100"
+        role="alert"
+        data-bs-delay="2000"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-body text-middle fs-6">
+          <span class="ms-2">Copiado al portapapeles &#128077;</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
