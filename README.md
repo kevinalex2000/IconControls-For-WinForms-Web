@@ -43,7 +43,7 @@ landing-page
 - The landing page is responsive and built using Bootstrap components.
 - Custom styles can be added in `css/styles.css`.
 - JavaScript functionality can be modified in `js/main.js`.
-- Data for the listings can be updated in `data/listings.csv`.
+- Data for the listings can be updated in `data/icons.csv`.
 
 ## Contributing
 
