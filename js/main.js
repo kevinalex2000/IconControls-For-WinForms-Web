@@ -122,10 +122,7 @@ function render() {
   const parsed = allRows.map(parseRow).filter((r) => r.name);
   const filtered = parsed.filter((r) => {
     if (!query) return true;
-    return (
-      (r.name || "").toLowerCase().includes(query) ||
-      (r.type || "").toLowerCase().includes(query)
-    );
+    return (r.name || "").toLowerCase().includes(query);
   });
 
   const total = filtered.length;
@@ -159,7 +156,7 @@ function renderPagination(totalItems, totalPages) {
   const prevA = document.createElement("a");
   prevA.className = "page-link";
   prevA.href = "#";
-  prevA.textContent = "Anterior";
+  prevA.textContent = "Previous";
   prevA.addEventListener("click", (e) => {
     e.preventDefault();
     if (currentPage > 1) {
@@ -214,7 +211,7 @@ function renderPagination(totalItems, totalPages) {
     "page-item " + (currentPage === totalPages ? "disabled" : "");
   const nextA = document.createElement("button");
   nextA.className = "page-link";
-  nextA.textContent = "Siguiente";
+  nextA.textContent = "Next";
   nextA.addEventListener("click", (e) => {
     e.preventDefault();
     if (currentPage < totalPages) {
@@ -230,7 +227,7 @@ function renderPagination(totalItems, totalPages) {
   info.className = "text-center mt-2";
   const startItem = (currentPage - 1) * PAGE_SIZE + 1;
   const endItem = Math.min(totalItems, currentPage * PAGE_SIZE);
-  info.textContent = `Mostrando ${startItem}-${endItem} de ${totalItems}`;
+  info.textContent = `Showing ${startItem}-${endItem} of ${totalItems}`;
 
   nav.appendChild(ul);
   nav.appendChild(info);
